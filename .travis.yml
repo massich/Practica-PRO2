@@ -1,0 +1,12 @@
+language:
+  - cpp
+
+os:
+  - linux  # shipping linux
+
+script:
+  - g++ main.cc -o main.x
+  - ./main.x <<< 'fin'
+
+notifications:
+  email: false
