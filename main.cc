@@ -19,6 +19,7 @@ Sólo se documentan elementos públicos
 #include <iostream>
 #include <string>
 #include <list>
+#include <vector>
 #endif
 
 using namespace std;
@@ -26,6 +27,8 @@ using namespace std;
 int main() {
     string a;
     bool fin = false;
+    
+    vector<string> Matrix;
 
     while(fin == false && cin >> a) {
       if(a == "poner_prod") {}
