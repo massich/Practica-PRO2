@@ -11,49 +11,36 @@ Sólo se documentan elementos públicos
     @brief Programa principal para el ejercicio "TreeKEA".
 */
 
-
-
-#include "producto.hh"
-#include "sala.hh"
-#include "almacen.hh"
+// #include "producto.hh"
+// #include "sala.hh"
+// #include "almacen.hh"
 
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <string>
 #include <list>
+#endif
+
 using namespace std;
 
 int main() {
     string a;
-    bool fin = false
-    
-    While(fin == false & cin >> a) {
-        
-    if(a == "poner_prod") {}
-    
-    else if(a == "quitar_prod") {}
-    
-    else if(a == "poner_items") {}
-     
-    else if(a == "quitar_items") {}
-      
-    else if(a == "distribuir") {}
-       
-    else if(a == "compactar") {}
-     
-    else if(a == "reorganizar") {}
-      
-    else if(a == "redimensionar") {}
-     
-    else if(a == "inventario") {}
-      
-    else if(a == "escribir") {}
-     
-    else if(a == "consultar_pos") {}
-     
-    else if(a == "consultar_prod") {}
-      
-    else if(a == "fin")fin  == true;
-    
+    bool fin = false;
+
+    while(fin == false && cin >> a) {
+      if(a == "poner_prod") {}
+      else if(a == "quitar_prod") {}
+      else if(a == "poner_items") {}
+      else if(a == "quitar_items") {}
+      else if(a == "distribuir") {}
+      else if(a == "compactar") {}
+      else if(a == "reorganizar") {}
+      else if(a == "redimensionar") {}
+      else if(a == "inventario") {}
+      else if(a == "escribir") {}
+      else if(a == "consultar_pos") {}
+      else if(a == "consultar_prod") {}
+      else if(a == "fin")
+        fin = true;
     }
 }
