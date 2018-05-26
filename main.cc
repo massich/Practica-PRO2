@@ -11,9 +11,9 @@ Sólo se documentan elementos públicos
     @brief Programa principal para el ejercicio "TreeKEA".
 */
 
-// #include "producto.hh"
-// #include "sala.hh"
-// #include "almacen.hh"
+#include "producto.hh"
+#include "sala.hh"
+#include "almacen.hh"
 
 #ifndef NO_DIAGRAM
 #include <iostream>
