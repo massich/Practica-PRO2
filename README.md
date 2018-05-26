@@ -5,7 +5,7 @@ This is a lab BLABLA..
 ## How to build and run this demo
 
 ```
-g++ main.cc -o main.x
+g++ -std=gnu++11 main.cc -o main.x
 ./main.x
 ```
 
