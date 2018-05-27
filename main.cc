@@ -28,5 +28,6 @@ int main() {
   cin >> m >> n;
   Sala A(m,n);
   A.escribir_sala();
+  A.consul_pos(2,2);
 
 }

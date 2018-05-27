@@ -7,9 +7,14 @@ void imprimir_string(string a) {
     if (a.empty()) cout << "NULL";
     else cout << a;
 }
+
 Sala::Sala(int m, int n) {
     Matrix A(m,Row(n));
     estanteria = A;
+}
+
+void Sala::consul_pos(int m,int n) const {
+    imprimir_string(estanteria[m][n]);
 }
 
 void Sala::escribir_sala() const{

@@ -68,7 +68,7 @@ public:
       \pre <em>cierto</em>
       \post El resultado es el identificador del producto en esa posición
   */
-  std::string consul_pos() const;
+  void consul_pos(int m,int n) const;
 
   /** @brief Consultora de los espacios vacíos de la estanteria
       \pre <em>cierto</em>
