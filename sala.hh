@@ -54,7 +54,7 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post Se llenan los espacios vacíos de la estantería en orden con el producto hasta agotar la cantidad de unidades del producto
   */
-  void poner_items (Producto p);
+  void poner_items(std::string p, int quant);
 
   /** @brief Vacia la estanteria de un producto específico
       \pre m>0,n>0 y identificador del producto empieza con una letra

@@ -28,6 +28,7 @@ int main() {
   cin >> m >> n;
   Sala A(m,n);
   A.escribir_sala();
-  A.consul_pos(2,2);
-
+  string p = "X32Z";
+  A.poner_items(p,12);
+  A.escribir_sala();
 }
