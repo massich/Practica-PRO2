@@ -24,13 +24,7 @@ Sólo se documentan elementos públicos
 using namespace std;
 
 int main() {
-  string a;
-  bool fin = false;
-
-  std::cout << "XW23 NULL NULL" << std::endl;
-  std::cout << "NULL NULL NULL" << std::endl;
-  std::cout << "NULL NULL NULL" << std::endl;
-  std::cout << "NULL NULL NULL" << std::endl;
-  std::cout << "XW23 1" << std::endl;
+  Sala n;
+  n.escribir_sala();
 
 }

@@ -5,7 +5,7 @@ os:
   - linux  # shipping linux
 
 script:
-  - g++ -std=gnu++11 main.cc -o main.x
+  - g++ -std=gnu++11 main.cc sala.cc -o main.x
   - ./main.x <<< 'fin'
 
 notifications:

@@ -13,7 +13,8 @@
 #endif
 
 
-typedef std::vector< std::vector<std::string> > Matrix;
+typedef std::vector<std::string> Row;
+typedef std::vector<Row> Matrix;
 
 /** @class Sala
     @brief Representa una sala del almacen.
