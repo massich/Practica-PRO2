@@ -26,9 +26,9 @@ public:
   /** @brief Creadora con valores concretos.
 
       \pre m>0,n>0 y id_sala>0
-      \post El resultado es una sala con identifcador de sala "id_sala" y estanteria "estant" de tamaño mxn.
+      \post El resultado es una sala con estanteria de tamaño mxn.
   */
-  // Sala(Matrix estant(int m, int n, int id_sala));
+  Sala(int m, int n);
 
   //Modificadoras
 

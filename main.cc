@@ -24,7 +24,9 @@ Sólo se documentan elementos públicos
 using namespace std;
 
 int main() {
-  Sala n;
-  n.escribir_sala();
+  int m,n;
+  cin >> m >> n;
+  Sala A(m,n);
+  A.escribir_sala();
 
 }
