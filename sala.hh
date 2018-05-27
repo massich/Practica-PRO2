@@ -60,7 +60,7 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post Se quita la cantidad indicada de unidades de un producto, o se retiran todos los que se puede y se indica que cantidad no se ha podido quitar por no haber suficientes
   */
-  void quitar_items (Producto p);
+  void quitar_items(std::string p, int quant);
 
   //Consultoras
 

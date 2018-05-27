@@ -29,6 +29,22 @@ void Sala::poner_items(string p, int quant) {
     if(quant != 0) cout << quant << endl;      
 }
 
+void Sala::quitar_items(string p, int quant) {
+    for(int i = 0; i < estanteria.size(); ++i){
+        for(int j = 0; j < estanteria[0].size(); ++j){
+            if(estanteria[i][j] == p){
+                estanteria[i][j].clear();
+                --quant;
+            }
+            if(quant == 0){
+                i = estanteria.size();
+                j = estanteria[0].size();
+            }  
+        }
+    }
+    if(quant != 0) cout << quant << endl;      
+}
+
 void Sala::consul_pos(int m,int n) const {
     imprimir_string(estanteria[m][n]);
 }
