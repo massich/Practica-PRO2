@@ -74,7 +74,7 @@ public:
       \pre <em>cierto</em>
       \post El resultado es el numero de espacios vacíos de la estanteria
   */
-  int consul_capacitat_actual() const;
+  int capacitat_actual() const;
 
   //Escritura de sala
 

@@ -28,6 +28,10 @@ int main() {
   cin >> m >> n;
   Sala A(m,n);
   string p = "X32Z";
-  A.poner_items(p,7);
+  A.poner_items(p,3);
+  A.escribir_sala();
+  string t = "AAAA";
+  A.poner_items(t,2);
+  A.redimensionar(2,3);
   A.escribir_sala();
 }
