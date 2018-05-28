@@ -94,11 +94,11 @@ void Sala::quitar_items(string p, int quant) {
 }
 
 void Sala::sumar_stock(string p, int quant) {
-    stock_sala[p] += quant;
+    stock[p] += quant;
 }
 
 void Sala::restar_stock(string p, int quant) {
-    stock_sala[p] -= quant;
+    stock[p] -= quant;
 }
 
 void Sala::consultar_pos(int m,int n) const {
@@ -130,7 +130,7 @@ void Sala::escribir_sala() const{
         cout << endl;
     }
     cout << endl;
-    for (map <string,int>::iterator it = stock_sala.begin(); it!=stock_sala.end(); ++it) {
-        cout << it << endl;
+    for (map<string,int>::const_iterator it=stock.begin(); it!=stock.end(); ++it) {
+        cout << it->first << " " << it ->second << endl;
     }
 }
