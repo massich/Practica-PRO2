@@ -24,23 +24,10 @@ Sólo se documentan elementos públicos
 using namespace std;
 
 int main() {
-    string a;
-    bool fin = false;
-
-    while(fin == false && cin >> a) {
-      if(a == "poner_prod") {}
-      else if(a == "quitar_prod") {}
-      else if(a == "poner_items") {}
-      else if(a == "quitar_items") {}
-      else if(a == "distribuir") {}
-      else if(a == "compactar") {}
-      else if(a == "reorganizar") {}
-      else if(a == "redimensionar") {}
-      else if(a == "inventario") {}
-      else if(a == "escribir") {}
-      else if(a == "consultar_pos") {}
-      else if(a == "consultar_prod") {}
-      else if(a == "fin")
-        fin = true;
-    }
+  int m,n;
+  cin >> m >> n;
+  Sala A(m,n);
+  string p = "X32Z";
+  A.poner_items(p,7);
+  A.escribir_sala();
 }

@@ -13,7 +13,8 @@
 #endif
 
 
-typedef std::vector< std::vector<std::string> > Matrix;
+typedef std::vector<std::string> Row;
+typedef std::vector<Row> Matrix;
 
 /** @class Sala
     @brief Representa una sala del almacen.
@@ -25,9 +26,9 @@ public:
   /** @brief Creadora con valores concretos.
 
       \pre m>0,n>0 y id_sala>0
-      \post El resultado es una sala con identifcador de sala "id_sala" y estanteria "estant" de tamaño mxn.
+      \post El resultado es una sala con estanteria de tamaño mxn.
   */
-  // Sala(Matrix estant(int m, int n, int id_sala));
+  Sala(int m, int n);
 
   //Modificadoras
 
@@ -53,13 +54,13 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post Se llenan los espacios vacíos de la estantería en orden con el producto hasta agotar la cantidad de unidades del producto
   */
-  void poner_items (Producto p);
+  void poner_items(std::string p, int quant);
 
   /** @brief Vacia la estanteria de un producto específico
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post Se quita la cantidad indicada de unidades de un producto, o se retiran todos los que se puede y se indica que cantidad no se ha podido quitar por no haber suficientes
   */
-  void quitar_items (Producto p);
+  void quitar_items(std::string p, int quant);
 
   //Consultoras
 
@@ -67,7 +68,7 @@ public:
       \pre <em>cierto</em>
       \post El resultado es el identificador del producto en esa posición
   */
-  std::string consul_pos() const;
+  void consul_pos(int m,int n) const;
 
   /** @brief Consultora de los espacios vacíos de la estanteria
       \pre <em>cierto</em>

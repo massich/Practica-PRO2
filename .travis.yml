@@ -5,8 +5,8 @@ os:
   - linux  # shipping linux
 
 script:
-  - g++ -std=gnu++11 main.cc -o main.x
-  - ./main.x <<< 'fin'
+  - g++ -std=gnu++11 main.cc sala.cc -o main.x
+  - ./main.x <<< $(cat prova.txt)
 
 notifications:
   email: false
