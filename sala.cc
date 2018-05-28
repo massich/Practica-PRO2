@@ -56,6 +56,7 @@ void Sala::compactar() {
 }
 
 void Sala::poner_items(string p, int quant) {
+    int total = quant; 
     for(int i = estanteria.size()-1; i >= 0; --i){
         for(int j = 0; j < estanteria[0].size(); ++j){
             if(estanteria[i][j].empty()){
@@ -69,9 +70,12 @@ void Sala::poner_items(string p, int quant) {
         }
     }
     if(quant != 0) cout << quant << endl;      
+    total -= quant;
+    sumar_stock(p,total);
 }
 
 void Sala::quitar_items(string p, int quant) {
+    int total = quant;
     for(int i = estanteria.size()-1; i >= 0; --i){
         for(int j = 0; j < estanteria[0].size(); ++j){
             if(estanteria[i][j] == p){
@@ -84,7 +88,9 @@ void Sala::quitar_items(string p, int quant) {
             }  
         }
     }
-    if(quant != 0) cout << quant << endl;      
+    if(quant != 0) cout << quant << endl;
+    total -= quant;
+    restar_stock(p,total);      
 }
 
 void Sala::sumar_stock(string p, int quant) {
@@ -122,5 +128,9 @@ void Sala::escribir_sala() const{
             }
         }
         cout << endl;
+    }
+    cout << endl;
+    for (map <string,int>::iterator it = stock_sala.begin(); it!=stock_sala.end(); ++it) {
+        cout << it << endl;
     }
 }

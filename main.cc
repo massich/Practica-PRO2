@@ -29,9 +29,7 @@ int main() {
   Sala A(m,n);
   string p = "X32Z";
   A.poner_items(p,3);
+  string t = "AAAA";
+  A.poner_items(t,2);
   A.escribir_sala();
-  cout << endl;
-  string t = "XAAA";
-  if (t < p) cout << "a" << endl;
-  if(p < t) cout << "b" << endl;
 }

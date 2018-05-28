@@ -52,16 +52,28 @@ public:
   void reorganizar ();
 
   /** @brief Rellena la estanteria con un producto específico
-      \pre m>0,n>0 y identificador del producto empieza con una letra
+      \pre identificador del producto empieza con una letra y quant >= 0
       \post Se llenan los espacios vacíos de la estantería en orden con el producto hasta agotar la cantidad de unidades del producto
   */
   void poner_items(std::string p, int quant);
 
   /** @brief Vacia la estanteria de un producto específico
-      \pre m>0,n>0 y identificador del producto empieza con una letra
+      \pre identificador del producto empieza con una letra y quant >= 0
       \post Se quita la cantidad indicada de unidades de un producto, o se retiran todos los que se puede y se indica que cantidad no se ha podido quitar por no haber suficientes
   */
   void quitar_items(std::string p, int quant);
+
+   /** @brief Suma items al stock de la sala
+      \pre identificador del producto empieza con una letra y quant >= 0
+      \post Se suma la cantidad de unidades indicada al total del stock del producto
+  */
+  void sumar_stock(std::string p, int quant);
+
+  /** @brief Restar items al stock de la sala
+      \pre identificador del producto empieza con una letra y quant >= 0
+      \post Se quita la cantidad indicada de unidades de un producto del total del stock 
+  */
+  void restar_stock(std::string p, int quant);
 
   //Consultoras
 
@@ -90,7 +102,7 @@ public:
 private:
   Matrix estanteria;
   int identificador_sala;
-  map <string,int> stock_sala;
+  std::map <std::string,int> stock_sala;
 };
 
 #endif
