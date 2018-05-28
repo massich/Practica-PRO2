@@ -35,6 +35,6 @@ void Stock::inventario() const{
 void Stock::quitar_prod(string id) {
     map<string,int>::iterator it;
     it = stock.find(id);
-    if(it == stock.end() and it->second == 0) stock.erase (it);
+    if(it != stock.end() and it->second == 0) stock.erase (it);
     else cout << "  error" << endl;
 }

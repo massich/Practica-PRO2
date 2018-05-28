@@ -19,15 +19,13 @@
 class Stock {
 
  public:
-  //Constructora
+  //Modificadoras
 
   /** @brief añadir producto al sistema
       \pre identificador no existe
       \post El resultado es añadir un producto con 0 unidades e identificador "id" a la lista de productos del almacen
   */
   void poner_prod(std::string id);
-
-  //Modificadoras
 
  /** @brief Suma items al stock
       \pre identificador del producto empieza con una letra y quant >= 0
@@ -49,9 +47,9 @@ class Stock {
   */
   void consultar_prod(std::string id) const;
 
-  /** @brief Consultora de las unidades
+  /** @brief Consultora del inventario
       \pre <em>cierto</em>
-      \post El resultado es el numero de unidades del parámetro implícito
+      \post El resultado es el numero de unidades de todos los productos del inventario
   */
   void inventario() const;
 

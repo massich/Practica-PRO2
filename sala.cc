@@ -86,7 +86,7 @@ void Sala::poner_items(string p, int quant) {
             }  
         }
     }
-    if(quant != 0) cout << quant << endl;      
+    if(quant != 0) cout << "  " << quant << endl;      
     total -= quant;
     sumar_stock(p,total);
 }
@@ -105,7 +105,7 @@ void Sala::quitar_items(string p, int quant) {
             }  
         }
     }
-    if(quant != 0) cout << quant << endl;
+    if(quant != 0) cout << "  " << quant << endl;
     total -= quant;
     restar_stock(p,total);      
 }
@@ -119,6 +119,7 @@ void Sala::restar_stock(string p, int quant) {
 }
 
 void Sala::consultar_pos(int m,int n) const {
+    cout << "  ";
     imprimir_string(estanteria[m-1][n-1]);
 }
 
@@ -134,12 +135,18 @@ int Sala::capacitat_actual() const{
     return cap;
 }
 
-void Sala::escribir_sala() const{
+void Sala::escribir() const{
     for(int i = 0; i < estanteria.size(); ++i){
         for(int j = 0; j < estanteria[0].size(); j++){
             if(j == estanteria[0].size() - 1) {
                 imprimir_string(estanteria[i][j]);
-            }else{
+            }
+            else if(j == 0){
+                cout << "  ";
+                imprimir_string(estanteria[i][j]);
+                cout << " ";
+            }
+            else{
                 imprimir_string(estanteria[i][j]);
                 cout << " ";
             }
@@ -150,8 +157,8 @@ void Sala::escribir_sala() const{
     for (map<string,int>::const_iterator it1=stock_sala.begin(); it1!=stock_sala.end(); ++it1) {
         total += it1->second;
     }
-    cout << total << endl;
+    cout << "  " << total << endl;
     for (map<string,int>::const_iterator it2=stock_sala.begin(); it2!=stock_sala.end(); ++it2) {
-        cout << it2->first << " " << it2 ->second << endl;
+        cout << "  " << it2->first << " " << it2 ->second << endl;
     }
 }

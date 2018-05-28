@@ -5,8 +5,6 @@
 #ifndef _SALA_HH_
 #define _SALA_HH_
 
-#include "producto.hh"
-
 #ifndef NO_DIAGRAM
 #include <vector>
 #include <string>
@@ -96,7 +94,7 @@ public:
       \pre <em>cierto</em>
       \post Se han escrito los elementos de la matriz de arriba a abajo y de izquierda a derecha y cuantas unidades hay de cada producto por orden de identificador
   */
-  void escribir_sala() const;
+  void escribir() const;
 
 
 private:
