@@ -55,6 +55,23 @@ void Sala::compactar() {
     }
 }
 
+void Sala::reorganizar() {
+    int x = estanteria.size() - 1;
+    int y = 0;
+    for (map<string,int>::const_iterator it=stock.begin(); it!=stock.end(); ++it) {
+        int rep = 0;
+        while(rep < (it->second)){
+            estanteria[x][y] = it->first;
+            ++y;
+            if(y == estanteria[0].size()){
+                --x;
+                y = 0;
+            }
+            ++rep; 
+        }
+    }   
+}
+
 void Sala::poner_items(string p, int quant) {
     int total = quant; 
     for(int i = estanteria.size()-1; i >= 0; --i){

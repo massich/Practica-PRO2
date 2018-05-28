@@ -32,4 +32,6 @@ int main() {
   string t = "AAAA";
   A.poner_items(t,2);
   A.escribir_sala();
+  A.reorganizar();
+  A.escribir_sala();
 }
