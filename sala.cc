@@ -58,7 +58,7 @@ void Sala::compactar() {
 void Sala::reorganizar() {
     int x = estanteria.size() - 1;
     int y = 0;
-    for (map<string,int>::const_iterator it=stock.begin(); it!=stock.end(); ++it) {
+    for (map<string,int>::const_iterator it=stock_sala.begin(); it!=stock_sala.end(); ++it) {
         int rep = 0;
         while(rep < (it->second)){
             estanteria[x][y] = it->first;
@@ -111,11 +111,11 @@ void Sala::quitar_items(string p, int quant) {
 }
 
 void Sala::sumar_stock(string p, int quant) {
-    stock[p] += quant;
+    stock_sala[p] += quant;
 }
 
 void Sala::restar_stock(string p, int quant) {
-    stock[p] -= quant;
+    stock_sala[p] -= quant;
 }
 
 void Sala::consultar_pos(int m,int n) const {
@@ -147,11 +147,11 @@ void Sala::escribir_sala() const{
         cout << endl;
     }
     int total = 0;
-    for (map<string,int>::const_iterator it1=stock.begin(); it1!=stock.end(); ++it1) {
+    for (map<string,int>::const_iterator it1=stock_sala.begin(); it1!=stock_sala.end(); ++it1) {
         total += it1->second;
     }
     cout << total << endl;
-    for (map<string,int>::const_iterator it2=stock.begin(); it2!=stock.end(); ++it2) {
+    for (map<string,int>::const_iterator it2=stock_sala.begin(); it2!=stock_sala.end(); ++it2) {
         cout << it2->first << " " << it2 ->second << endl;
     }
 }
