@@ -10,6 +10,7 @@
 #ifndef NO_DIAGRAM
 #include <vector>
 #include <string>
+#include <map>
 #endif
 
 
@@ -87,9 +88,9 @@ public:
 
 
 private:
-  // Matrix estanteria( m, std::vector <std::string> (n));
   Matrix estanteria;
   int identificador_sala;
+  map <string,int> stock_sala;
 };
 
 #endif

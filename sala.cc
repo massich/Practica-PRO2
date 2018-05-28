@@ -87,6 +87,14 @@ void Sala::quitar_items(string p, int quant) {
     if(quant != 0) cout << quant << endl;      
 }
 
+void Sala::sumar_stock(string p, int quant) {
+    stock_sala[p] += quant;
+}
+
+void Sala::restar_stock(string p, int quant) {
+    stock_sala[p] -= quant;
+}
+
 void Sala::consultar_pos(int m,int n) const {
     imprimir_string(estanteria[m-1][n-1]);
 }

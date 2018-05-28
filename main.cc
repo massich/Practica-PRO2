@@ -31,9 +31,7 @@ int main() {
   A.poner_items(p,3);
   A.escribir_sala();
   cout << endl;
-  string t = "AAAA";
-  A.poner_items(t,2);
-  A.quitar_items(p,2);
-  A.compactar();
-  A.escribir_sala();
+  string t = "XAAA";
+  if (t < p) cout << "a" << endl;
+  if(p < t) cout << "b" << endl;
 }
