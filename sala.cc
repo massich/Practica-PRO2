@@ -116,7 +116,7 @@ int Sala::capacitat_actual() const{
     }
     return cap;
 }
-//falta afegir que escrigui els continguts i la quantitat
+
 void Sala::escribir_sala() const{
     for(int i = 0; i < estanteria.size(); ++i){
         for(int j = 0; j < estanteria[0].size(); j++){
@@ -129,8 +129,12 @@ void Sala::escribir_sala() const{
         }
         cout << endl;
     }
-    cout << endl;
-    for (map<string,int>::const_iterator it=stock.begin(); it!=stock.end(); ++it) {
-        cout << it->first << " " << it ->second << endl;
+    int total = 0;
+    for (map<string,int>::const_iterator it1=stock.begin(); it1!=stock.end(); ++it1) {
+        total += it1->second;
+    }
+    cout << total << endl;
+    for (map<string,int>::const_iterator it2=stock.begin(); it2!=stock.end(); ++it2) {
+        cout << it2->first << " " << it2 ->second << endl;
     }
 }
