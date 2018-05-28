@@ -30,8 +30,10 @@ int main() {
   string p = "X32Z";
   A.poner_items(p,3);
   A.escribir_sala();
+  cout << endl;
   string t = "AAAA";
   A.poner_items(t,2);
-  A.redimensionar(2,3);
+  A.quitar_items(p,2);
+  A.compactar();
   A.escribir_sala();
 }

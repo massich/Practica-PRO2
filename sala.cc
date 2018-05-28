@@ -32,24 +32,28 @@ void Sala::redimensionar(int m, int n){
     estanteria = nova;
 }
 
-//void Sala::compactar() {
-    //for(int i = estanteria.size()-1; i >= 0; --i){
-      //  for(int j = 0; j < estanteria[0].size(); ++j){
-        //    int x = i;
-          //  int y = j;
-            //while(estanteria[i][j].empty()) {
-              //  if(y + 1 == estanteria[0].size()){
-                //    --x;
-                  //  y = 0;
-                    //estanteria[i][j] = estanteria[x][y];
-                    //estanteria[x][y].clear(); 
-                //}
-                //else {
-                  //  estanteria[i][j] = estanteria[x][y+1];
-                    //estanteria 
-                //}
-            //}
-//}
+void Sala::compactar() {
+    for(int i = estanteria.size()-1; i >= 0; --i){
+        for(int j = 0; j < estanteria[0].size(); ++j){
+            int x = i;
+            int y = j;
+            while(estanteria[i][j].empty() and x >= 0) {
+                ++y;
+                if(y == estanteria[0].size() and x == 0) --x; 
+                else if(y == estanteria[0].size()){
+                    --x;
+                    y = 0;
+                    estanteria[i][j] = estanteria[x][y];
+                    estanteria[x][y].clear(); 
+                }
+                else {
+                    estanteria[i][j] = estanteria[x][y];
+                    estanteria[x][y].clear(); 
+                }
+            }
+        }
+    }
+}
 
 void Sala::poner_items(string p, int quant) {
     for(int i = estanteria.size()-1; i >= 0; --i){
