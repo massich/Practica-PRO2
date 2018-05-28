@@ -11,7 +11,7 @@ Sólo se documentan elementos públicos
     @brief Programa principal para el ejercicio "TreeKEA".
 */
 
-#include "producto.hh"
+#include "stock.hh"
 #include "sala.hh"
 #include "almacen.hh"
 
@@ -24,14 +24,8 @@ Sólo se documentan elementos públicos
 using namespace std;
 
 int main() {
-  int m,n;
-  cin >> m >> n;
-  Sala A(m,n);
-  string p = "X32Z";
-  A.poner_items(p,3);
-  string t = "AAAA";
-  A.poner_items(t,2);
-  A.escribir_sala();
-  A.reorganizar();
-  A.escribir_sala();
+ int m,n;
+ cin >> m >> n; 
+ Sala A(m,n);
+ A.escribir();
 }
