@@ -64,7 +64,7 @@ class Stock {
   void quitar_prod(std::string id);
 
 private:
-  map <string,int> stock;
+  std::map <std::string,int> stock;
 };
 
 #endif

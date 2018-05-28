@@ -11,7 +11,7 @@ Sólo se documentan elementos públicos
     @brief Programa principal para el ejercicio "TreeKEA".
 */
 
-#include "producto.hh"
+#include "stock.hh"
 #include "sala.hh"
 #include "almacen.hh"
 
