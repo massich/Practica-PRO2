@@ -87,8 +87,8 @@ void Sala::quitar_items(string p, int quant) {
     if(quant != 0) cout << quant << endl;      
 }
 
-void Sala::consul_pos(int m,int n) const {
-    imprimir_string(estanteria[m][n]);
+void Sala::consultar_pos(int m,int n) const {
+    imprimir_string(estanteria[m-1][n-1]);
 }
 
 int Sala::capacitat_actual() const{
