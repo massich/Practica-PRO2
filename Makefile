@@ -16,11 +16,11 @@ program.o: program.cc almacen.hh stock.hh
 stock.o: stock.cc stock.hh
 	g++ -c stock.cc $(OPCIONS)
 #
-tar: program.cc almacen.cc almacen.hh sala.cc sala.hh stock.cc stock.hh Makefile
-	tar	cvf practica.tar program.cc almacen.cc stock.cc stock.hh almacen.hh sala.cc sala.hh bintree.hh Makefile
+practica.tar: program.cc almacen.cc almacen.hh sala.cc sala.hh stock.cc stock.hh Makefile
+	tar	cvf practica.tar program.cc almacen.cc stock.cc stock.hh almacen.hh sala.cc sala.hh bintree.hh html.zip Makefile
 #
 
 clean:
 	rm *.o
 	rm *.exe
-	rm *.tar
+	rm practica.tar

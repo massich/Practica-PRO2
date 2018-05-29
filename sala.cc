@@ -67,24 +67,27 @@ void Sala::compactar() {
 }
 
 void Sala::reorganizar() {
-    //Reccorremos el stock de la sala con un iterador
+    //Creamos una nueva estanteria vacia con las mismas dimensiones para recolocar los objetos
+    //Recorremos el stock de la sala con un iterador
     //entramos en un bucle donde vamos guardando el producto que señala el iterador en la estanteria
     // hasta que guardamos tantas unidades como hay en stock, para eso sirve el int rep, que cuenta las veces
     //que hemos colocado el producto
-    int x = estanteria.size() - 1;
+    Matrix nova(estanteria.size(),Row(estanteria[0].size()));
+    int x = nova.size() - 1;
     int y = 0;
     for (map<string,int>::const_iterator it=stock_sala.begin(); it!=stock_sala.end(); ++it) {
         int rep = 0;
         while(rep < (it->second)){
-            estanteria[x][y] = it->first;
+            nova[x][y] = it->first;
             ++y;
-            if(y == estanteria[0].size()){
+            if(y == nova[0].size()){
                 --x;
                 y = 0;
             }
             ++rep; 
         }
-    }   
+    }
+    estanteria = nova;   
 }
 
 int Sala::poner_items(string p, int quant) {
@@ -192,6 +195,8 @@ void Sala::escribir() const{
     }
     cout << "  " << total << endl;
     for (map<string,int>::const_iterator it2=stock_sala.begin(); it2!=stock_sala.end(); ++it2) {
-        cout << "  " << it2->first << " " << it2 ->second << endl;
+        if(it2 ->second > 0){
+            cout << "  " << it2->first << " " << it2 ->second << endl;
+        }
     }
 }

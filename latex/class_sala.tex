@@ -194,27 +194,30 @@ Definición en la línea 69 del archivo sala.\+cc.
 
 \begin{DoxyCode}
 69                        \{
-70     \textcolor{comment}{//Reccorremos el stock de la sala con un iterador}
-71     \textcolor{comment}{//entramos en un bucle donde vamos guardando el producto que señala el iterador en la estanteria}
-72     \textcolor{comment}{// hasta que guardamos tantas unidades como hay en stock, para eso sirve el int rep, que cuenta las
+70     \textcolor{comment}{//Creamos una nueva estanteria vacia con las mismas dimensiones para recolocar los objetos}
+71     \textcolor{comment}{//Recorremos el stock de la sala con un iterador}
+72     \textcolor{comment}{//entramos en un bucle donde vamos guardando el producto que señala el iterador en la estanteria}
+73     \textcolor{comment}{// hasta que guardamos tantas unidades como hay en stock, para eso sirve el int rep, que cuenta las
        veces}
-73     \textcolor{comment}{//que hemos colocado el producto}
-74     \textcolor{keywordtype}{int} x = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size() - 1;
-75     \textcolor{keywordtype}{int} y = 0;
-76     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it!=
+74     \textcolor{comment}{//que hemos colocado el producto}
+75     \mbox{\hyperlink{almacen_8hh_acdf2b2dca71b1d617c96d1afa6a525fa}{Matrix}} nova(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size(),\mbox{\hyperlink{sala_8hh_aa33775a3e721e5fbd17b48a94ed3ca94}{Row}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size()));
+76     \textcolor{keywordtype}{int} x = nova.size() - 1;
+77     \textcolor{keywordtype}{int} y = 0;
+78     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it!=
       \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.end(); ++it) \{
-77         \textcolor{keywordtype}{int} rep = 0;
-78         \textcolor{keywordflow}{while}(rep < (it->second))\{
-79             \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[x][y] = it->first;
-80             ++y;
-81             \textcolor{keywordflow}{if}(y == \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size())\{
-82                 --x;
-83                 y = 0;
-84             \}
-85             ++rep; 
-86         \}
-87     \}   
-88 \}
+79         \textcolor{keywordtype}{int} rep = 0;
+80         \textcolor{keywordflow}{while}(rep < (it->second))\{
+81             nova[x][y] = it->first;
+82             ++y;
+83             \textcolor{keywordflow}{if}(y == nova[0].size())\{
+84                 --x;
+85                 y = 0;
+86             \}
+87             ++rep; 
+88         \}
+89     \}
+90     \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}} = nova;   
+91 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_aa65c68be5f5242570063fc5f0e8dafa2}\label{class_sala_aa65c68be5f5242570063fc5f0e8dafa2}} 
 \index{Sala@{Sala}!poner\+\_\+items@{poner\+\_\+items}}
@@ -234,31 +237,31 @@ Se llenan los espacios vacíos de la estantería en orden con el producto hasta 
 \end{DoxyPostcond}
 
 
-Definición en la línea 90 del archivo sala.\+cc.
+Definición en la línea 93 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-90                                          \{
-91     \textcolor{comment}{//Recorremos la estanteria y vamos colocando productos en los sitios vacios.}
-92     \textcolor{comment}{//ademas vamos restando a la cantidad inicial quant cada vez que colocamos un producto}
-93     \textcolor{comment}{//al final añadimos la cantidad que se ha colocado en el stock }
-94     \textcolor{keywordtype}{int} total = quant; 
-95     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size()-1; i >= 0; --i)\{
-96         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); ++j)\{
-97             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].empty())\{
-98                 \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j] = p;
-99                 --quant;
-100             \}
-101             \textcolor{keywordflow}{if}(quant <= 0)\{
-102                 i = -1;
-103                 j = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size();
-104             \}  
-105         \}
-106     \}      
-107     \textcolor{keywordflow}{if}(quant >= 0)total -= quant;
-108     \textcolor{keywordflow}{if}(total > 0)\mbox{\hyperlink{class_sala_a91e0acab4f56f3a5cbcad80afe163de8}{sumar\_stock}}(p,total);
-109     \textcolor{keywordflow}{return} quant;
-110 \}
+93                                          \{
+94     \textcolor{comment}{//Recorremos la estanteria y vamos colocando productos en los sitios vacios.}
+95     \textcolor{comment}{//ademas vamos restando a la cantidad inicial quant cada vez que colocamos un producto}
+96     \textcolor{comment}{//al final añadimos la cantidad que se ha colocado en el stock }
+97     \textcolor{keywordtype}{int} total = quant; 
+98     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size()-1; i >= 0; --i)\{
+99         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); ++j)\{
+100             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].empty())\{
+101                 \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j] = p;
+102                 --quant;
+103             \}
+104             \textcolor{keywordflow}{if}(quant <= 0)\{
+105                 i = -1;
+106                 j = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size();
+107             \}  
+108         \}
+109     \}      
+110     \textcolor{keywordflow}{if}(quant >= 0)total -= quant;
+111     \textcolor{keywordflow}{if}(total > 0)\mbox{\hyperlink{class_sala_a91e0acab4f56f3a5cbcad80afe163de8}{sumar\_stock}}(p,total);
+112     \textcolor{keywordflow}{return} quant;
+113 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_afcdc6c283e5fca9632f279142ad613c3}\label{class_sala_afcdc6c283e5fca9632f279142ad613c3}} 
 \index{Sala@{Sala}!quitar\+\_\+items@{quitar\+\_\+items}}
@@ -278,31 +281,31 @@ Se quita la cantidad indicada de unidades de un producto, o se retiran todos los
 \end{DoxyPostcond}
 
 
-Definición en la línea 112 del archivo sala.\+cc.
+Definición en la línea 115 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-112                                           \{
-113     \textcolor{comment}{//Recorremos la estanteria y cada vez que encontramos un producto p hacemos clear de la posicion}
-114     \textcolor{comment}{//ademas vamos restando a la cantidad inicial quant cada vez que borramos un producto}
-115     \textcolor{comment}{//al final restamos la cantidad que se ha borrado del stock }
-116     \textcolor{keywordtype}{int} total = quant;
-117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size()-1; i >= 0; --i)\{
-118         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); ++j)\{
-119             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j] == p)\{
-120                 \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].clear();
-121                 --quant;
-122             \}
-123             \textcolor{keywordflow}{if}(quant <= 0)\{
-124                 i = -1;
-125                 j = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size();
-126             \}  
-127         \}
-128     \}
-129     \textcolor{keywordflow}{if}(quant >= 0)total -= quant;
-130     \textcolor{keywordflow}{if}(total > 0)\mbox{\hyperlink{class_sala_a3f2485d40f7d90ca5eb8142dbadd5993}{restar\_stock}}(p,total);  
-131     \textcolor{keywordflow}{return} quant;    
-132 \}
+115                                           \{
+116     \textcolor{comment}{//Recorremos la estanteria y cada vez que encontramos un producto p hacemos clear de la posicion}
+117     \textcolor{comment}{//ademas vamos restando a la cantidad inicial quant cada vez que borramos un producto}
+118     \textcolor{comment}{//al final restamos la cantidad que se ha borrado del stock }
+119     \textcolor{keywordtype}{int} total = quant;
+120     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size()-1; i >= 0; --i)\{
+121         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); ++j)\{
+122             \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j] == p)\{
+123                 \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].clear();
+124                 --quant;
+125             \}
+126             \textcolor{keywordflow}{if}(quant <= 0)\{
+127                 i = -1;
+128                 j = \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size();
+129             \}  
+130         \}
+131     \}
+132     \textcolor{keywordflow}{if}(quant >= 0)total -= quant;
+133     \textcolor{keywordflow}{if}(total > 0)\mbox{\hyperlink{class_sala_a3f2485d40f7d90ca5eb8142dbadd5993}{restar\_stock}}(p,total);  
+134     \textcolor{keywordflow}{return} quant;    
+135 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_a91e0acab4f56f3a5cbcad80afe163de8}\label{class_sala_a91e0acab4f56f3a5cbcad80afe163de8}} 
 \index{Sala@{Sala}!sumar\+\_\+stock@{sumar\+\_\+stock}}
@@ -322,14 +325,14 @@ Se suma la cantidad de unidades indicada al total del stock del producto
 \end{DoxyPostcond}
 
 
-Definición en la línea 134 del archivo sala.\+cc.
+Definición en la línea 137 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-134                                           \{
-135     \textcolor{comment}{//suma de unidades de p al stock}
-136     \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}[p] += quant;
-137 \}
+137                                           \{
+138     \textcolor{comment}{//suma de unidades de p al stock}
+139     \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}[p] += quant;
+140 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_a3f2485d40f7d90ca5eb8142dbadd5993}\label{class_sala_a3f2485d40f7d90ca5eb8142dbadd5993}} 
 \index{Sala@{Sala}!restar\+\_\+stock@{restar\+\_\+stock}}
@@ -349,14 +352,14 @@ Se quita la cantidad indicada de unidades de un producto del total del stock
 \end{DoxyPostcond}
 
 
-Definición en la línea 139 del archivo sala.\+cc.
+Definición en la línea 142 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-139                                            \{
-140     \textcolor{comment}{//resta unidades de p al stock}
-141     \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}[p] -= quant;
-142 \}
+142                                            \{
+143     \textcolor{comment}{//resta unidades de p al stock}
+144     \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}[p] -= quant;
+145 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_a611c18b0ebd5fd9c8ec386809b363d50}\label{class_sala_a611c18b0ebd5fd9c8ec386809b363d50}} 
 \index{Sala@{Sala}!consultar\+\_\+pos@{consultar\+\_\+pos}}
@@ -376,16 +379,16 @@ El resultado es el identificador del producto en esa posición
 \end{DoxyPostcond}
 
 
-Definición en la línea 144 del archivo sala.\+cc.
+Definición en la línea 147 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-144                                           \{
-145     \textcolor{comment}{//imprime el string en la posicion indicada de la estanteria}
-146     cout << \textcolor{stringliteral}{"  "};
-147     \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[m-1][n-1]);
-148     cout << endl;
-149 \}
+147                                           \{
+148     \textcolor{comment}{//imprime el string en la posicion indicada de la estanteria}
+149     cout << \textcolor{stringliteral}{"  "};
+150     \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[m-1][n-1]);
+151     cout << endl;
+152 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_ac1bcf6e4f9a336b505a362468411af20}\label{class_sala_ac1bcf6e4f9a336b505a362468411af20}} 
 \index{Sala@{Sala}!capacitat\+\_\+actual@{capacitat\+\_\+actual}}
@@ -405,23 +408,23 @@ El resultado es el numero de espacios ocupados de la estanteria
 \end{DoxyPostcond}
 
 
-Definición en la línea 151 del archivo sala.\+cc.
+Definición en la línea 154 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-151                                 \{
-152     \textcolor{comment}{//Recorremos la estanteria y por cada posicion no vacia que encontramos}
-153     \textcolor{comment}{//sumamos uno a cap, al final la funcion devuelve cap, que es la cantidad total de productos}
-154     \textcolor{keywordtype}{int} cap = 0;
-155     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size(); ++i)\{
-156         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); j++)\{
-157             \textcolor{keywordflow}{if}(not \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].empty())\{
-158                 cap++;
-159             \}
-160         \}
-161     \}
-162     \textcolor{keywordflow}{return} cap;
-163 \}
+154                                 \{
+155     \textcolor{comment}{//Recorremos la estanteria y por cada posicion no vacia que encontramos}
+156     \textcolor{comment}{//sumamos uno a cap, al final la funcion devuelve cap, que es la cantidad total de productos}
+157     \textcolor{keywordtype}{int} cap = 0;
+158     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size(); ++i)\{
+159         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); j++)\{
+160             \textcolor{keywordflow}{if}(not \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j].empty())\{
+161                 cap++;
+162             \}
+163         \}
+164     \}
+165     \textcolor{keywordflow}{return} cap;
+166 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_sala_a972a0cf004635c588343ddad949282e0}\label{class_sala_a972a0cf004635c588343ddad949282e0}} 
 \index{Sala@{Sala}!escribir@{escribir}}
@@ -441,45 +444,47 @@ Se han escrito los elementos de la matriz de arriba a abajo y de izquierda a der
 \end{DoxyPostcond}
 
 
-Definición en la línea 165 del archivo sala.\+cc.
+Definición en la línea 168 del archivo sala.\+cc.
 
 
 \begin{DoxyCode}
-165                          \{
-166     \textcolor{comment}{//Recorremos la estanteria y vamos imprimendo el contenido de cada posicion}
-167     \textcolor{comment}{//hay varios ifs porque dependiendo de la posicion el espaciado es diferente}
-168     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size(); ++i)\{
-169         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); j++)\{
-170             \textcolor{keywordflow}{if}( j!=0 and j == \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size() - 1) \{
-171                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
-172             \}
-173             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( j == 0 and \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size() == 1) \{
-174                 cout << \textcolor{stringliteral}{"  "};
-175                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
-176             \}
-177             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(j == 0)\{
-178                 cout << \textcolor{stringliteral}{"  "};
-179                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
-180                 cout << \textcolor{stringliteral}{" "};
-181             \}
-182             \textcolor{keywordflow}{else}\{
-183                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
-184                 cout << \textcolor{stringliteral}{" "};
-185             \}
-186         \}
-187         cout << endl;
-188     \}
-189     \textcolor{keywordtype}{int} total = 0;
-190     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it1=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it1!=
+168                          \{
+169     \textcolor{comment}{//Recorremos la estanteria y vamos imprimendo el contenido de cada posicion}
+170     \textcolor{comment}{//hay varios ifs porque dependiendo de la posicion el espaciado es diferente}
+171     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}.size(); ++i)\{
+172         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size(); j++)\{
+173             \textcolor{keywordflow}{if}( j!=0 and j == \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size() - 1) \{
+174                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
+175             \}
+176             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( j == 0 and \mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[0].size() == 1) \{
+177                 cout << \textcolor{stringliteral}{"  "};
+178                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
+179             \}
+180             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(j == 0)\{
+181                 cout << \textcolor{stringliteral}{"  "};
+182                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
+183                 cout << \textcolor{stringliteral}{" "};
+184             \}
+185             \textcolor{keywordflow}{else}\{
+186                 \mbox{\hyperlink{sala_8cc_ac1916f29be6c9137b2df1079e26c54f3}{imprimir\_string}}(\mbox{\hyperlink{class_sala_a8f5264818c98db9c0d075c51a7672d95}{estanteria}}[i][j]);
+187                 cout << \textcolor{stringliteral}{" "};
+188             \}
+189         \}
+190         cout << endl;
+191     \}
+192     \textcolor{keywordtype}{int} total = 0;
+193     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it1=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it1!=
       \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.end(); ++it1) \{
-191         total += it1->second;
-192     \}
-193     cout << \textcolor{stringliteral}{"  "} << total << endl;
-194     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it2=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it2!=
+194         total += it1->second;
+195     \}
+196     cout << \textcolor{stringliteral}{"  "} << total << endl;
+197     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it2=\mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.begin(); it2!=
       \mbox{\hyperlink{class_sala_a7c9511997ba4a6fac93625fd3f5c7703}{stock\_sala}}.end(); ++it2) \{
-195         cout << \textcolor{stringliteral}{"  "} << it2->first << \textcolor{stringliteral}{" "} << it2 ->second << endl;
-196     \}
-197 \}
+198         \textcolor{keywordflow}{if}(it2 ->second > 0)\{
+199             cout << \textcolor{stringliteral}{"  "} << it2->first << \textcolor{stringliteral}{" "} << it2 ->second << endl;
+200         \}
+201     \}
+202 \}
 \end{DoxyCode}
 
 
