@@ -64,13 +64,19 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post llama a la funcion quitar_items de la clase sala
   */
-  void quitar_items (int id_sala,std::string p, int quant);
+  int quitar_items (int id_sala,std::string p, int quant);
 
   /** @brief Distribuye una cantidad de un producto por todas las salas
       \pre identificador del producto existe en la lista de productos
       \post Se reparte on el orden del arbol T la cantidad del producto
   */
-  int distribuir(BinTree <int> A, std::string p, int quant);
+  int distribuir_almacen(BinTree <int> A, std::string p, int quant);
+
+    /** @brief Distribuye una cantidad de un producto por todas las salas
+      \pre identificador del producto existe en la lista de productos
+      \post Se llama a la función distribuir_almacen
+  */
+  int distribuir(std::string p, int quant);
 
   //Consultoras
 
@@ -80,13 +86,19 @@ public:
   */
   void consultar_pos(int id_sala, int m, int n);
 
+   /** @brief Consultora de los espacios ocupados de la estanteria de una sala
+      \pre <em>cierto</em>
+      \post El resultado es el numero de espacios ocupados de la estanteria
+  */
+  int capacitat_actual(int id_sala) const;
+
   //Escritura de sala
 
   /** @brief Operación de escritura de sala con identificador "id_sala"
       \pre <em>cierto</em>
       \post Llama a la funcion escribir de la clase Sala
   */
-  void escribir(int id_sala);
+  void escribir(int id_sala) const;
 
  //Lectura de arbol sacada de BinTreeIOint
 

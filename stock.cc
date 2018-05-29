@@ -19,6 +19,10 @@ void Stock::restar_stock(string p, int quant) {
     stock[p] -= quant;
 }
 
+int Stock::comprobar_prod(string id) const {
+    return stock.count(id);
+}
+
 void Stock::consultar_prod(string id) const {
     map<string,int>::const_iterator it;
     it = stock.find(id);

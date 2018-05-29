@@ -85,14 +85,13 @@ int Sala::poner_items(string p, int quant) {
                 j = estanteria[0].size();
             }  
         }
-    }
-    //if(quant != 0) cout << "  " << quant << endl;      
+    }      
     total -= quant;
     sumar_stock(p,total);
     return quant;
 }
 
-void Sala::quitar_items(string p, int quant) {
+int Sala::quitar_items(string p, int quant) {
     int total = quant;
     for(int i = estanteria.size()-1; i >= 0; --i){
         for(int j = 0; j < estanteria[0].size(); ++j){
@@ -106,9 +105,9 @@ void Sala::quitar_items(string p, int quant) {
             }  
         }
     }
-    if(quant != 0) cout << "  " << quant << endl;
     total -= quant;
-    restar_stock(p,total);      
+    restar_stock(p,total);  
+    return quant;    
 }
 
 void Sala::sumar_stock(string p, int quant) {
