@@ -58,7 +58,7 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post llama a la funcion poner_items de la clase sala
   */
-  void poner_items (int id_sala,std::string p, int quant);
+  int poner_items (int id_sala,std::string p, int quant); // esta función tiene que ser un int para poder usarla en distribuir
 
   /** @brief Vacia la estanteria de un producto específico
       \pre m>0,n>0 y identificador del producto empieza con una letra
@@ -70,7 +70,7 @@ public:
       \pre identificador del producto existe en la lista de productos
       \post Se reparte on el orden del arbol T la cantidad del producto
   */
-  void distribuir(BinTree <int> A, std::string p, int quant);
+  int distribuir(BinTree <int> A, std::string p, int quant);
 
   //Consultoras
 

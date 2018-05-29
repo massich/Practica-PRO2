@@ -10,5 +10,3 @@ g++ -std=gnu++11 main.cc sala.cc stock.cc almacen.cc -o main.x
 ```
 
 This has been tested with `gcc version 5.4`
-
-això es toto
