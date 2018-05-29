@@ -12,7 +12,6 @@ Sólo se documentan elementos públicos
 */
 
 #include "stock.hh"
-#include "sala.hh"
 #include "almacen.hh"
 
 #ifndef NO_DIAGRAM
