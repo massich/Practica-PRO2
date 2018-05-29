@@ -59,7 +59,7 @@ public:
       \pre identificador del producto empieza con una letra y quant >= 0
       \post Se quita la cantidad indicada de unidades de un producto, o se retiran todos los que se puede y se indica que cantidad no se ha podido quitar por no haber suficientes
   */
-  void quitar_items(std::string p, int quant);
+  int quitar_items(std::string p, int quant);
 
    /** @brief Suma items al stock de la sala
       \pre identificador del producto empieza con una letra y quant >= 0
@@ -81,9 +81,9 @@ public:
   */
   void consultar_pos(int m,int n) const;
 
-  /** @brief Consultora de los espacios vacíos de la estanteria
+  /** @brief Consultora de los espacios ocupados de la estanteria
       \pre <em>cierto</em>
-      \post El resultado es el numero de espacios vacíos de la estanteria
+      \post El resultado es el numero de espacios ocupados de la estanteria
   */
   int capacitat_actual() const;
 

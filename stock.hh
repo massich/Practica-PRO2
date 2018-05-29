@@ -41,6 +41,12 @@ class Stock {
 
   //Consultoras
 
+  /** @brief Consultora auxiliar
+      \pre <em>cierto</em>
+      \post El resultado es un 0 si el producto no se encuentra registrado en el stock o un 1 si esta registrado
+  */
+  int comprobar_prod(std::string id) const;
+
   /** @brief Consultora de las unidades
       \pre <em>cierto</em>
       \post El resultado es el numero de unidades del parámetro implícito
