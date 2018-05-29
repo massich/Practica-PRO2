@@ -18,14 +18,14 @@ Sólo se documentan elementos públicos
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 #endif
 
 using namespace std;
 
 int main() {
- int m,n;
- cin >> m >> n; 
- Sala A(m,n);
- A.escribir();
+ int n;
+ cin >> n; 
+ Almacen magatzem(n);
+ magatzem.escribir(4);
 }

@@ -53,7 +53,7 @@ public:
       \pre identificador del producto empieza con una letra y quant >= 0
       \post Se llenan los espacios vacíos de la estantería en orden con el producto hasta agotar la cantidad de unidades del producto
   */
-  void poner_items(std::string p, int quant);
+  int poner_items(std::string p, int quant); // esta función tiene que ser un int para poder usarla en distribuir
 
   /** @brief Vacia la estanteria de un producto específico
       \pre identificador del producto empieza con una letra y quant >= 0
@@ -99,7 +99,6 @@ public:
 
 private:
   Matrix estanteria;
-  int identificador_sala;
   std::map<std::string,int>stock_sala;
 };
 
