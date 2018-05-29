@@ -58,25 +58,25 @@ public:
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post llama a la funcion poner_items de la clase sala
   */
-  int poner_items (int id_sala,std::string p, int quant); // esta función tiene que ser un int para poder usarla en distribuir
+  int poner_items(int id_sala,std::string p, int quant); // esta función tiene que ser un int para poder usarla en distribuir
 
   /** @brief Vacia la estanteria de un producto específico
       \pre m>0,n>0 y identificador del producto empieza con una letra
       \post llama a la funcion quitar_items de la clase sala
   */
-  int quitar_items (int id_sala,std::string p, int quant);
+  int quitar_items(int id_sala,std::string p, int quant);
 
   /** @brief Distribuye una cantidad de un producto por todas las salas
       \pre identificador del producto existe en la lista de productos
       \post Se reparte on el orden del arbol T la cantidad del producto
   */
-  int distribuir_almacen(BinTree <int> A, std::string p, int quant);
+  int distribuir_almacen(BinTree <int> A, std::string& p, int quant);
 
     /** @brief Distribuye una cantidad de un producto por todas las salas
       \pre identificador del producto existe en la lista de productos
       \post Se llama a la función distribuir_almacen
   */
-  int distribuir(std::string p, int quant);
+  int distribuir(std::string& p, int quant);
 
   //Consultoras
 
@@ -118,8 +118,9 @@ public:
  
 
 private:
-  int n; //numero de salas
+ /** @brief Representa la estructura del almacen. */
   BinTree <int> T;
+  /** @brief Es un vector de salas del almacen, hecho para poder llamar des de la clase almacen a las funciones de la clase sala  */
   std::vector<Sala> V;
 
 

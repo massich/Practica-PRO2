@@ -68,6 +68,8 @@ class Stock {
   void quitar_prod(std::string id);
 
 private:
+
+  /** @brief Representa el inventario del almacen. */
   std::map <std::string,int> stock;
 };
 

@@ -1,3 +1,7 @@
+/** @file almacen.cc
+    @brief Implementación de la clase almacen.
+*/
+
 #include "almacen.hh"
 #include <iostream>
 using namespace std;
@@ -28,31 +32,34 @@ void Almacen::reorganizar(int id_sala) {
 	V[id_sala-1].reorganizar();
 }
 
-int Almacen::poner_items (int id_sala,std::string p, int quant) {
+int Almacen::poner_items(int id_sala,std::string p, int quant) {
 	return V[id_sala-1].poner_items(p,quant);
 }
 
-int Almacen::quitar_items (int id_sala,std::string p, int quant) {
+int Almacen::quitar_items(int id_sala,std::string p, int quant) {
 	return V[id_sala-1].quitar_items(p,quant);
 }
 
-int Almacen::distribuir_almacen(BinTree <int> A, std::string p, int quant) {
-	int esq,dre;
-	int root = A.value(); 
-	int total = poner_items(root,p,quant);
-	if(total == 0) return 0;
-	if(total%2 == 0) {
-		esq = distribuir_almacen(A.left(), p, (total/2));
-		dre = distribuir_almacen(A.right(), p, (total/2));
-	}
+int Almacen::distribuir_almacen(BinTree <int> A, string& p, int quant) {
+	if(A.empty()) return quant;
 	else {
-		esq = distribuir_almacen(A.left(), p, ((total/2)+1));
-		dre = distribuir_almacen(A.right(), p, (total/2));
+		int esq,dre;
+		int root = A.value(); 
+		int total = poner_items(root,p,quant);
+		if(total == 0) return 0;
+		else if(total%2 == 0) {
+			esq = distribuir_almacen(A.left(), p, (total/2));
+			dre = distribuir_almacen(A.right(), p, (total/2));
+		}
+		else {
+			esq = distribuir_almacen(A.left(), p, ((total/2)+1));
+			dre = distribuir_almacen(A.right(), p, (total/2));
+		}
+		return esq + dre;
 	}
-	return esq + dre;
 }
 
-int Almacen::distribuir(std::string p, int quant){
+int Almacen::distribuir(string& p, int quant){
 	return distribuir_almacen(T,p,quant);
 }
 

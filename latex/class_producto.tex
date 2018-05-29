@@ -1,0 +1,163 @@
+\hypertarget{class_producto}{}\section{Referencia de la Clase Producto}
+\label{class_producto}\index{Producto@{Producto}}
+
+
+Representa un tipo de producto del almacen.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_producto_aef5383f676b625125d6d4a754e457af3}{poner\+\_\+prod}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em añadir producto al sistema \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_producto_ac6a7f69acbcde467e09feccbd3a7af57}{modificar}} (std\+::string id, int ud)
+\begin{DoxyCompactList}\small\item\em Modificadora de los atributos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_producto_ae0067962ae16d3c12fb6dda463562245}{consul\+\_\+identificador}} () const
+\begin{DoxyCompactList}\small\item\em Consultora del identificador. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_producto_aa26e89579230adf0e1e40460a04ff36f}{consul\+\_\+unidades}} () const
+\begin{DoxyCompactList}\small\item\em Consultora de las unidades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_producto_a7223d677ba9a0844072904602fb3b0f1}{quitar\+\_\+prod}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Dar de baja un producto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_producto_af3546b67d16efa3ddc66caf069f0c3ec}{escribir\+\_\+producto}} () const
+\begin{DoxyCompactList}\small\item\em Operación de escritura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_producto_a522892e64ad72444f1976ae86b2c2816}{identificador}}
+\item 
+int \mbox{\hyperlink{class_producto_a391646f51e9bbbd3cf22abdbd74eaac6}{unidades}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa un tipo de producto del almacen. 
+
+Definición en la línea 18 del archivo producto.\+hh.
+
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_producto_aef5383f676b625125d6d4a754e457af3}\label{class_producto_aef5383f676b625125d6d4a754e457af3}} 
+\index{Producto@{Producto}!poner\+\_\+prod@{poner\+\_\+prod}}
+\index{poner\+\_\+prod@{poner\+\_\+prod}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{poner\+\_\+prod()}{poner\_prod()}}
+{\footnotesize\ttfamily void Producto\+::poner\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+añadir producto al sistema 
+
+\begin{DoxyPrecond}{Precondición}
+identificador no existe 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es añadir un producto con 0 unidades e identificador \char`\"{}id\char`\"{} a la lista de productos del almacen 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_producto_ac6a7f69acbcde467e09feccbd3a7af57}\label{class_producto_ac6a7f69acbcde467e09feccbd3a7af57}} 
+\index{Producto@{Producto}!modificar@{modificar}}
+\index{modificar@{modificar}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{modificar()}{modificar()}}
+{\footnotesize\ttfamily void Producto\+::modificar (\begin{DoxyParamCaption}\item[{std\+::string}]{id,  }\item[{int}]{ud }\end{DoxyParamCaption})}
+
+
+
+Modificadora de los atributos. 
+
+\begin{DoxyPrecond}{Precondición}
+unidades$>$=0 y el identifcador empieza con una letra 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El parámetro implícito pasa a tener identificador \char`\"{}id\char`\"{} y \char`\"{}ud\char`\"{} unidades. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_producto_ae0067962ae16d3c12fb6dda463562245}\label{class_producto_ae0067962ae16d3c12fb6dda463562245}} 
+\index{Producto@{Producto}!consul\+\_\+identificador@{consul\+\_\+identificador}}
+\index{consul\+\_\+identificador@{consul\+\_\+identificador}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{consul\+\_\+identificador()}{consul\_identificador()}}
+{\footnotesize\ttfamily int Producto\+::consul\+\_\+identificador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del identificador. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el identificador del parámetro implícito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_producto_aa26e89579230adf0e1e40460a04ff36f}\label{class_producto_aa26e89579230adf0e1e40460a04ff36f}} 
+\index{Producto@{Producto}!consul\+\_\+unidades@{consul\+\_\+unidades}}
+\index{consul\+\_\+unidades@{consul\+\_\+unidades}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{consul\+\_\+unidades()}{consul\_unidades()}}
+{\footnotesize\ttfamily bool Producto\+::consul\+\_\+unidades (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de las unidades. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el numero de unidades del parámetro implícito 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_producto_a7223d677ba9a0844072904602fb3b0f1}\label{class_producto_a7223d677ba9a0844072904602fb3b0f1}} 
+\index{Producto@{Producto}!quitar\+\_\+prod@{quitar\+\_\+prod}}
+\index{quitar\+\_\+prod@{quitar\+\_\+prod}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{quitar\+\_\+prod()}{quitar\_prod()}}
+{\footnotesize\ttfamily void Producto\+::quitar\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Dar de baja un producto. 
+
+\begin{DoxyPrecond}{Precondición}
+identificador empieza por letra y unidades == 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es dar de baja el producto con identificador \char`\"{}id\char`\"{} de la lista de productos 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_producto_af3546b67d16efa3ddc66caf069f0c3ec}\label{class_producto_af3546b67d16efa3ddc66caf069f0c3ec}} 
+\index{Producto@{Producto}!escribir\+\_\+producto@{escribir\+\_\+producto}}
+\index{escribir\+\_\+producto@{escribir\+\_\+producto}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{escribir\+\_\+producto()}{escribir\_producto()}}
+{\footnotesize\ttfamily void Producto\+::escribir\+\_\+producto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Operación de escritura. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se han escrito el identificador y el numero de unidades del producto 
+\end{DoxyPostcond}
+
+
+\subsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_producto_a522892e64ad72444f1976ae86b2c2816}\label{class_producto_a522892e64ad72444f1976ae86b2c2816}} 
+\index{Producto@{Producto}!identificador@{identificador}}
+\index{identificador@{identificador}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{identificador}{identificador}}
+{\footnotesize\ttfamily std\+::string Producto\+::identificador\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 69 del archivo producto.\+hh.
+
+\mbox{\Hypertarget{class_producto_a391646f51e9bbbd3cf22abdbd74eaac6}\label{class_producto_a391646f51e9bbbd3cf22abdbd74eaac6}} 
+\index{Producto@{Producto}!unidades@{unidades}}
+\index{unidades@{unidades}!Producto@{Producto}}
+\subsubsection{\texorpdfstring{unidades}{unidades}}
+{\footnotesize\ttfamily int Producto\+::unidades\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 70 del archivo producto.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{producto_8hh}{producto.\+hh}}\end{DoxyCompactItemize}

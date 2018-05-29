@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TreeKEA: Fichero Fuente producto.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TreeKEA
+   &#160;<span id="projectnumber">29-05-2018</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">producto.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="producto_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _PRODUCTO_HH_</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _PRODUCTO_HH_</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_producto.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_producto.html">Producto</a> {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//Constructora</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_producto.html#aef5383f676b625125d6d4a754e457af3">poner_prod</a>(std::string <span class="keywordtype">id</span>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//Modificadoras</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_producto.html#ac6a7f69acbcde467e09feccbd3a7af57">modificar</a>(std::string <span class="keywordtype">id</span>, <span class="keywordtype">int</span> ud);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">//Consultoras</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_producto.html#ae0067962ae16d3c12fb6dda463562245">consul_identificador</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="class_producto.html#aa26e89579230adf0e1e40460a04ff36f">consul_unidades</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//Destructora</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_producto.html#a7223d677ba9a0844072904602fb3b0f1">quitar_prod</a>(std::string <span class="keywordtype">id</span>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">//Escritura de producto</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_producto.html#af3546b67d16efa3ddc66caf069f0c3ec">escribir_producto</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_producto.html#a522892e64ad72444f1976ae86b2c2816">   69</a></span>&#160;  std::string <a class="code" href="class_producto.html#a522892e64ad72444f1976ae86b2c2816">identificador</a>;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_producto.html#a391646f51e9bbbd3cf22abdbd74eaac6">   70</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_producto.html#a391646f51e9bbbd3cf22abdbd74eaac6">unidades</a>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_producto_html_aef5383f676b625125d6d4a754e457af3"><div class="ttname"><a href="class_producto.html#aef5383f676b625125d6d4a754e457af3">Producto::poner_prod</a></div><div class="ttdeci">void poner_prod(std::string id)</div><div class="ttdoc">añadir producto al sistema </div></div>
+<div class="ttc" id="class_producto_html_af3546b67d16efa3ddc66caf069f0c3ec"><div class="ttname"><a href="class_producto.html#af3546b67d16efa3ddc66caf069f0c3ec">Producto::escribir_producto</a></div><div class="ttdeci">void escribir_producto() const</div><div class="ttdoc">Operación de escritura. </div></div>
+<div class="ttc" id="class_producto_html_ac6a7f69acbcde467e09feccbd3a7af57"><div class="ttname"><a href="class_producto.html#ac6a7f69acbcde467e09feccbd3a7af57">Producto::modificar</a></div><div class="ttdeci">void modificar(std::string id, int ud)</div><div class="ttdoc">Modificadora de los atributos. </div></div>
+<div class="ttc" id="class_producto_html_aa26e89579230adf0e1e40460a04ff36f"><div class="ttname"><a href="class_producto.html#aa26e89579230adf0e1e40460a04ff36f">Producto::consul_unidades</a></div><div class="ttdeci">bool consul_unidades() const</div><div class="ttdoc">Consultora de las unidades. </div></div>
+<div class="ttc" id="class_producto_html"><div class="ttname"><a href="class_producto.html">Producto</a></div><div class="ttdoc">Representa un tipo de producto del almacen. </div><div class="ttdef"><b>Definition:</b> <a href="producto_8hh_source.html#l00018">producto.hh:18</a></div></div>
+<div class="ttc" id="class_producto_html_a391646f51e9bbbd3cf22abdbd74eaac6"><div class="ttname"><a href="class_producto.html#a391646f51e9bbbd3cf22abdbd74eaac6">Producto::unidades</a></div><div class="ttdeci">int unidades</div><div class="ttdef"><b>Definition:</b> <a href="producto_8hh_source.html#l00070">producto.hh:70</a></div></div>
+<div class="ttc" id="class_producto_html_ae0067962ae16d3c12fb6dda463562245"><div class="ttname"><a href="class_producto.html#ae0067962ae16d3c12fb6dda463562245">Producto::consul_identificador</a></div><div class="ttdeci">int consul_identificador() const</div><div class="ttdoc">Consultora del identificador. </div></div>
+<div class="ttc" id="class_producto_html_a7223d677ba9a0844072904602fb3b0f1"><div class="ttname"><a href="class_producto.html#a7223d677ba9a0844072904602fb3b0f1">Producto::quitar_prod</a></div><div class="ttdeci">void quitar_prod(std::string id)</div><div class="ttdoc">Dar de baja un producto. </div></div>
+<div class="ttc" id="class_producto_html_a522892e64ad72444f1976ae86b2c2816"><div class="ttname"><a href="class_producto.html#a522892e64ad72444f1976ae86b2c2816">Producto::identificador</a></div><div class="ttdeci">std::string identificador</div><div class="ttdef"><b>Definition:</b> <a href="producto_8hh_source.html#l00069">producto.hh:69</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

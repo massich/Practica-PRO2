@@ -1,0 +1,164 @@
+\hypertarget{program_8cc}{}\section{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.\+cc@{program.\+cc}}
+
+
+Programa principal para el ejercicio \char`\"{}\+Tree\+K\+E\+A\char`\"{}.  
+
+
+Dependencia gráfica adjunta para program.\+cc\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Programa principal para el ejercicio \char`\"{}\+Tree\+K\+E\+A\char`\"{}. 
+
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{program.\+cc@{program.\+cc}!main@{main}}
+\index{main@{main}!program.\+cc@{program.\+cc}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 26 del archivo program.\+cc.
+
+
+\begin{DoxyCode}
+26            \{
+27  \textcolor{keywordtype}{int} n;
+28  cin >> n; 
+29  \mbox{\hyperlink{class_almacen}{Almacen}} magatzem(n);
+30  \mbox{\hyperlink{class_stock}{Stock}} sistema;
+31  \textcolor{keywordtype}{string} option;
+32  \textcolor{keywordtype}{bool} fin = \textcolor{keyword}{false};
+33  \textcolor{keywordflow}{while}(not fin and cin >> option) \{
+34    \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"poner\_prod"})\{
+35      \textcolor{keywordtype}{string} id\_prod;
+36      cin >> id\_prod;
+37      cout << \textcolor{stringliteral}{"poner\_prod"} << \textcolor{stringliteral}{" "} << id\_prod << endl;
+38      sistema.\mbox{\hyperlink{class_stock_a06c7f65bcdd419950fa2c00fd638c03b}{poner\_prod}}(id\_prod);
+39    \}
+40 
+41    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"quitar\_prod"})\{
+42      \textcolor{keywordtype}{string} id\_prod;
+43      cin >> id\_prod;
+44      cout << \textcolor{stringliteral}{"quitar\_prod"} << \textcolor{stringliteral}{" "} << id\_prod << endl;
+45      sistema.\mbox{\hyperlink{class_stock_aaa1564711f0e6aa0a8093f53a3dad0b4}{quitar\_prod}}(id\_prod);
+46    \}
+47 
+48    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"poner\_items"})\{
+49      \textcolor{keywordtype}{int} id\_sala;
+50      \textcolor{keywordtype}{string} id\_prod;
+51      \textcolor{keywordtype}{int} quant;
+52      cin >> id\_sala >> id\_prod >> quant;
+53      cout << \textcolor{stringliteral}{"poner\_items"} << \textcolor{stringliteral}{" "} << id\_sala << \textcolor{stringliteral}{" "} << id\_prod << \textcolor{stringliteral}{" "} << quant << endl;
+54      \textcolor{keywordflow}{if}(sistema.\mbox{\hyperlink{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}{comprobar\_prod}}(id\_prod) > 0) \{
+55        \textcolor{keywordtype}{int} total = 0;
+56        \textcolor{keywordflow}{if}(quant >= 0)total = quant;
+57        \textcolor{keywordtype}{int} aux = magatzem.poner\_items(id\_sala,id\_prod,quant);
+58        cout << \textcolor{stringliteral}{"  "} << aux << endl;
+59        total =   total - aux;
+60        sistema.\mbox{\hyperlink{class_stock_a13f036a59415e6b865a3011ecd64d060}{sumar\_stock}}(id\_prod,total);
+61      \}
+62      \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"  error"} << endl;
+63    \}
+64 
+65    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"quitar\_items"})\{
+66      \textcolor{keywordtype}{int} id\_sala;
+67      \textcolor{keywordtype}{string} id\_prod;
+68      \textcolor{keywordtype}{int} quant;
+69      cin >> id\_sala >> id\_prod >> quant;
+70      cout << \textcolor{stringliteral}{"quitar\_items"} << \textcolor{stringliteral}{" "} << id\_sala << \textcolor{stringliteral}{" "} << id\_prod << \textcolor{stringliteral}{" "} << quant << endl;
+71      \textcolor{keywordflow}{if}(sistema.\mbox{\hyperlink{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}{comprobar\_prod}}(id\_prod) > 0) \{
+72        \textcolor{keywordtype}{int} total = 0;
+73        \textcolor{keywordflow}{if}(quant >= 0)total = quant;
+74        \textcolor{keywordtype}{int} aux = magatzem.quitar\_items(id\_sala,id\_prod,quant);
+75        cout << \textcolor{stringliteral}{"  "} << aux << endl;
+76        total -= aux;
+77        sistema.\mbox{\hyperlink{class_stock_a180a618016e6e6f78c6ca295c0ebfecc}{restar\_stock}}(id\_prod, total);
+78      \}
+79      \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"  error"} << endl;
+80    \}
+81 
+82    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"distribuir"})\{
+83      \textcolor{keywordtype}{string} id\_prod;
+84      \textcolor{keywordtype}{int} quant;
+85      cin >> id\_prod >> quant;
+86      cout << \textcolor{stringliteral}{"distribuir"} << \textcolor{stringliteral}{" "} << id\_prod << \textcolor{stringliteral}{" "} << quant << endl;
+87      \textcolor{keywordflow}{if}(sistema.\mbox{\hyperlink{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}{comprobar\_prod}}(id\_prod) > 0) \{
+88        \textcolor{keywordtype}{int} total = quant;
+89        \textcolor{keywordtype}{int} aux = magatzem.distribuir(id\_prod,quant);
+90        cout << \textcolor{stringliteral}{"  "} << aux << endl;
+91        total -= aux;
+92        sistema.\mbox{\hyperlink{class_stock_a13f036a59415e6b865a3011ecd64d060}{sumar\_stock}}(id\_prod, total);
+93      \}
+94      \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"  error"} << endl;
+95    \}
+96 
+97    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"compactar"})\{
+98      \textcolor{keywordtype}{int} id\_sala;
+99      cin >> id\_sala;
+100      cout << \textcolor{stringliteral}{"compactar"} << \textcolor{stringliteral}{" "} << id\_sala << endl;
+101      magatzem.compactar(id\_sala);
+102    \}
+103 
+104    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"reorganizar"})\{
+105      \textcolor{keywordtype}{int} id\_sala;
+106      cin >> id\_sala;
+107      cout << \textcolor{stringliteral}{"reorganizar"} << \textcolor{stringliteral}{" "} << id\_sala << endl;
+108      magatzem.reorganizar(id\_sala);
+109    \}
+110 
+111    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"redimensionar"})\{
+112      \textcolor{keywordtype}{int} id\_sala, fil, col;
+113      cin >> id\_sala >> fil >> col;
+114      cout << \textcolor{stringliteral}{"redimensionar"} << \textcolor{stringliteral}{" "} << id\_sala << \textcolor{stringliteral}{" "} << fil << \textcolor{stringliteral}{" "} <<  col << endl;
+115      \textcolor{keywordflow}{if}((fil*col) < magatzem.capacitat\_actual(id\_sala)) \{
+116        cout << \textcolor{stringliteral}{"  error"} << endl;
+117      \}
+118      \textcolor{keywordflow}{else} \{
+119        magatzem.redimensionar(id\_sala,fil,col);
+120      \}
+121    \}
+122 
+123    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"inventario"})\{
+124      cout << \textcolor{stringliteral}{"inventario"} << endl;
+125      sistema.\mbox{\hyperlink{class_stock_ab92820b495a64f2a7aef5b071644909a}{inventario}}();
+126    \}
+127 
+128    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"escribir"})\{
+129      \textcolor{keywordtype}{int} id\_sala;
+130      cin >> id\_sala;
+131      cout << \textcolor{stringliteral}{"escribir"} << \textcolor{stringliteral}{" "} << id\_sala << endl;
+132      magatzem.escribir(id\_sala);
+133    \}
+134 
+135    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"consultar\_pos"})\{
+136      \textcolor{keywordtype}{int} id\_sala, fila, col;
+137      cin >> id\_sala >> fila >> col;
+138      cout << \textcolor{stringliteral}{"consultar\_pos"} << \textcolor{stringliteral}{" "} << id\_sala << \textcolor{stringliteral}{" "} << fila << \textcolor{stringliteral}{" "} << col << endl;
+139      magatzem.consultar\_pos(id\_sala,fila,col);
+140    \}
+141 
+142    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"consultar\_prod"})\{
+143      \textcolor{keywordtype}{string} id\_prod;
+144      cin >> id\_prod;
+145      cout << \textcolor{stringliteral}{"consultar\_prod"} << \textcolor{stringliteral}{" "} << id\_prod << endl;
+146      sistema.\mbox{\hyperlink{class_stock_aadb2f269b75da29388c0e8b7055b44ce}{consultar\_prod}}(id\_prod);
+147    \}
+148    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(option == \textcolor{stringliteral}{"fin"})\{
+149      cout << \textcolor{stringliteral}{"fin"} << endl;
+150      fin = \textcolor{keyword}{true};
+151    \}
+152  \}
+153 
+154 \}
+\end{DoxyCode}

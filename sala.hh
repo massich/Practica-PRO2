@@ -98,7 +98,9 @@ public:
 
 
 private:
+/** @brief Representa la estanteria de la sala. */
   Matrix estanteria;
+  /** @brief Representa el inventario de la sala. Se usa para la funcion escribir. */
   std::map<std::string,int>stock_sala;
 };
 

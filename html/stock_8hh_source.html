@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TreeKEA: Fichero Fuente stock.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TreeKEA
+   &#160;<span id="projectnumber">29-05-2018</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">stock.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stock_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _STOCK_HH_</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _STOCK_HH_</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_stock.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_stock.html">Stock</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//Modificadoras</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#a06c7f65bcdd419950fa2c00fd638c03b">poner_prod</a>(std::string <span class="keywordtype">id</span>);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#a13f036a59415e6b865a3011ecd64d060">sumar_stock</a>(std::string p, <span class="keywordtype">int</span> quant);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#a180a618016e6e6f78c6ca295c0ebfecc">restar_stock</a>(std::string p, <span class="keywordtype">int</span> quant);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">//Consultoras</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_stock.html#ae1fe35478f2eeae0f91216e7c25e33e6">comprobar_prod</a>(std::string <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#aadb2f269b75da29388c0e8b7055b44ce">consultar_prod</a>(std::string <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#ab92820b495a64f2a7aef5b071644909a">inventario</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">//Destructora</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_stock.html#aaa1564711f0e6aa0a8093f53a3dad0b4">quitar_prod</a>(std::string <span class="keywordtype">id</span>);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_stock.html#a55cb69748a14da5fe525e55a2c656ba9">   73</a></span>&#160;  std::map &lt;std::string,int&gt; <a class="code" href="class_stock.html#a55cb69748a14da5fe525e55a2c656ba9">stock</a>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_stock_html"><div class="ttname"><a href="class_stock.html">Stock</a></div><div class="ttdoc">Representa el control de inventario del almacen. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8hh_source.html#l00019">stock.hh:19</a></div></div>
+<div class="ttc" id="class_stock_html_aadb2f269b75da29388c0e8b7055b44ce"><div class="ttname"><a href="class_stock.html#aadb2f269b75da29388c0e8b7055b44ce">Stock::consultar_prod</a></div><div class="ttdeci">void consultar_prod(std::string id) const</div><div class="ttdoc">Consultora de las unidades. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00035">stock.cc:35</a></div></div>
+<div class="ttc" id="class_stock_html_a180a618016e6e6f78c6ca295c0ebfecc"><div class="ttname"><a href="class_stock.html#a180a618016e6e6f78c6ca295c0ebfecc">Stock::restar_stock</a></div><div class="ttdeci">void restar_stock(std::string p, int quant)</div><div class="ttdoc">Restar items al stock. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00025">stock.cc:25</a></div></div>
+<div class="ttc" id="class_stock_html_a55cb69748a14da5fe525e55a2c656ba9"><div class="ttname"><a href="class_stock.html#a55cb69748a14da5fe525e55a2c656ba9">Stock::stock</a></div><div class="ttdeci">std::map&lt; std::string, int &gt; stock</div><div class="ttdoc">Representa el inventario del almacen. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8hh_source.html#l00073">stock.hh:73</a></div></div>
+<div class="ttc" id="class_stock_html_ab92820b495a64f2a7aef5b071644909a"><div class="ttname"><a href="class_stock.html#ab92820b495a64f2a7aef5b071644909a">Stock::inventario</a></div><div class="ttdeci">void inventario() const</div><div class="ttdoc">Consultora del inventario. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00044">stock.cc:44</a></div></div>
+<div class="ttc" id="class_stock_html_aaa1564711f0e6aa0a8093f53a3dad0b4"><div class="ttname"><a href="class_stock.html#aaa1564711f0e6aa0a8093f53a3dad0b4">Stock::quitar_prod</a></div><div class="ttdeci">void quitar_prod(std::string id)</div><div class="ttdoc">Dar de baja un producto. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00051">stock.cc:51</a></div></div>
+<div class="ttc" id="class_stock_html_a06c7f65bcdd419950fa2c00fd638c03b"><div class="ttname"><a href="class_stock.html#a06c7f65bcdd419950fa2c00fd638c03b">Stock::poner_prod</a></div><div class="ttdeci">void poner_prod(std::string id)</div><div class="ttdoc">añadir producto al sistema </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00011">stock.cc:11</a></div></div>
+<div class="ttc" id="class_stock_html_a13f036a59415e6b865a3011ecd64d060"><div class="ttname"><a href="class_stock.html#a13f036a59415e6b865a3011ecd64d060">Stock::sumar_stock</a></div><div class="ttdeci">void sumar_stock(std::string p, int quant)</div><div class="ttdoc">Suma items al stock. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00020">stock.cc:20</a></div></div>
+<div class="ttc" id="class_stock_html_ae1fe35478f2eeae0f91216e7c25e33e6"><div class="ttname"><a href="class_stock.html#ae1fe35478f2eeae0f91216e7c25e33e6">Stock::comprobar_prod</a></div><div class="ttdeci">int comprobar_prod(std::string id) const</div><div class="ttdoc">Consultora auxiliar. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00030">stock.cc:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

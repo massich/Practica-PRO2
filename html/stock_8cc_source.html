@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TreeKEA: Fichero Fuente stock.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TreeKEA
+   &#160;<span id="projectnumber">29-05-2018</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">stock.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stock_8cc.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stock_8hh.html">stock.hh</a>&quot;</span> </div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_stock.html#a06c7f65bcdd419950fa2c00fd638c03b">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#a06c7f65bcdd419950fa2c00fd638c03b">Stock::poner_prod</a>(<span class="keywordtype">string</span> <span class="keywordtype">id</span>){</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">//Busca el producto en el stock, si lo encuentra imprime error</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//si no lo encunetra lo añade con 0 unidades </span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    map&lt;string,int&gt;::iterator it;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    it = stock.find(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span>(it != stock.end()) cout &lt;&lt; <span class="stringliteral">&quot;  error&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">else</span> stock[id] = 0;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_stock.html#a13f036a59415e6b865a3011ecd64d060">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#a13f036a59415e6b865a3011ecd64d060">Stock::sumar_stock</a>(<span class="keywordtype">string</span> p, <span class="keywordtype">int</span> quant) {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//suma de unidades de p al stock</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span>(quant &gt; 0)stock[p] += quant;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_stock.html#a180a618016e6e6f78c6ca295c0ebfecc">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#a180a618016e6e6f78c6ca295c0ebfecc">Stock::restar_stock</a>(<span class="keywordtype">string</span> p, <span class="keywordtype">int</span> quant) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//resta unidades de p al stock</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(quant &gt; 0)stock[p] -= quant;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_stock.html#ae1fe35478f2eeae0f91216e7c25e33e6">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_stock.html#ae1fe35478f2eeae0f91216e7c25e33e6">Stock::comprobar_prod</a>(<span class="keywordtype">string</span> <span class="keywordtype">id</span>)<span class="keyword"> const </span>{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//comprueba si el producto esta en stock, si no lo está devuelve 0, si lo está devuelve 1</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> stock.count(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_stock.html#aadb2f269b75da29388c0e8b7055b44ce">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#aadb2f269b75da29388c0e8b7055b44ce">Stock::consultar_prod</a>(<span class="keywordtype">string</span> <span class="keywordtype">id</span>)<span class="keyword"> const </span>{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//busca un producto en el stock, si no lo encuentra imprime error.</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Si lo encuentra imprime las unidades totales de ese producto.</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    map&lt;string,int&gt;::const_iterator it;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    it = stock.find(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(it != stock.end()) cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; endl;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">else</span> cout &lt;&lt; <span class="stringliteral">&quot;  error&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_stock.html#ab92820b495a64f2a7aef5b071644909a">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#ab92820b495a64f2a7aef5b071644909a">Stock::inventario</a>()<span class="keyword"> const</span>{</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//Recorre todo el stock e imprime todos los productos y sus unidades</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (map&lt;string,int&gt;::const_iterator it=stock.begin(); it!=stock.end(); ++it) {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it -&gt;second &lt;&lt; endl;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_stock.html#aaa1564711f0e6aa0a8093f53a3dad0b4">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_stock.html#aaa1564711f0e6aa0a8093f53a3dad0b4">Stock::quitar_prod</a>(<span class="keywordtype">string</span> <span class="keywordtype">id</span>) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//Busca el producto en el stock, si lo encuentra y tiene 0 unidades lo borra del stock.</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//En cualquier otro caso imprime error.</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    map&lt;string,int&gt;::iterator it;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    it = stock.find(<span class="keywordtype">id</span>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(it != stock.end() and it-&gt;second == 0) stock.erase (it);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span> cout &lt;&lt; <span class="stringliteral">&quot;  error&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="ttc" id="class_stock_html_aadb2f269b75da29388c0e8b7055b44ce"><div class="ttname"><a href="class_stock.html#aadb2f269b75da29388c0e8b7055b44ce">Stock::consultar_prod</a></div><div class="ttdeci">void consultar_prod(std::string id) const</div><div class="ttdoc">Consultora de las unidades. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00035">stock.cc:35</a></div></div>
+<div class="ttc" id="stock_8hh_html"><div class="ttname"><a href="stock_8hh.html">stock.hh</a></div><div class="ttdoc">Especificación de la clase Stock. </div></div>
+<div class="ttc" id="class_stock_html_a180a618016e6e6f78c6ca295c0ebfecc"><div class="ttname"><a href="class_stock.html#a180a618016e6e6f78c6ca295c0ebfecc">Stock::restar_stock</a></div><div class="ttdeci">void restar_stock(std::string p, int quant)</div><div class="ttdoc">Restar items al stock. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00025">stock.cc:25</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="class_stock_html_ab92820b495a64f2a7aef5b071644909a"><div class="ttname"><a href="class_stock.html#ab92820b495a64f2a7aef5b071644909a">Stock::inventario</a></div><div class="ttdeci">void inventario() const</div><div class="ttdoc">Consultora del inventario. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00044">stock.cc:44</a></div></div>
+<div class="ttc" id="class_stock_html_aaa1564711f0e6aa0a8093f53a3dad0b4"><div class="ttname"><a href="class_stock.html#aaa1564711f0e6aa0a8093f53a3dad0b4">Stock::quitar_prod</a></div><div class="ttdeci">void quitar_prod(std::string id)</div><div class="ttdoc">Dar de baja un producto. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00051">stock.cc:51</a></div></div>
+<div class="ttc" id="class_stock_html_a06c7f65bcdd419950fa2c00fd638c03b"><div class="ttname"><a href="class_stock.html#a06c7f65bcdd419950fa2c00fd638c03b">Stock::poner_prod</a></div><div class="ttdeci">void poner_prod(std::string id)</div><div class="ttdoc">añadir producto al sistema </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00011">stock.cc:11</a></div></div>
+<div class="ttc" id="class_stock_html_a13f036a59415e6b865a3011ecd64d060"><div class="ttname"><a href="class_stock.html#a13f036a59415e6b865a3011ecd64d060">Stock::sumar_stock</a></div><div class="ttdeci">void sumar_stock(std::string p, int quant)</div><div class="ttdoc">Suma items al stock. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00020">stock.cc:20</a></div></div>
+<div class="ttc" id="class_stock_html_ae1fe35478f2eeae0f91216e7c25e33e6"><div class="ttname"><a href="class_stock.html#ae1fe35478f2eeae0f91216e7c25e33e6">Stock::comprobar_prod</a></div><div class="ttdeci">int comprobar_prod(std::string id) const</div><div class="ttdoc">Consultora auxiliar. </div><div class="ttdef"><b>Definition:</b> <a href="stock_8cc_source.html#l00030">stock.cc:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,265 @@
+\hypertarget{class_stock}{}\section{Referencia de la Clase Stock}
+\label{class_stock}\index{Stock@{Stock}}
+
+
+Representa el control de inventario del almacen.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_stock_a06c7f65bcdd419950fa2c00fd638c03b}{poner\+\_\+prod}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em añadir producto al sistema \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stock_a13f036a59415e6b865a3011ecd64d060}{sumar\+\_\+stock}} (std\+::string p, int quant)
+\begin{DoxyCompactList}\small\item\em Suma items al stock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stock_a180a618016e6e6f78c6ca295c0ebfecc}{restar\+\_\+stock}} (std\+::string p, int quant)
+\begin{DoxyCompactList}\small\item\em Restar items al stock. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}{comprobar\+\_\+prod}} (std\+::string id) const
+\begin{DoxyCompactList}\small\item\em Consultora auxiliar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stock_aadb2f269b75da29388c0e8b7055b44ce}{consultar\+\_\+prod}} (std\+::string id) const
+\begin{DoxyCompactList}\small\item\em Consultora de las unidades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stock_ab92820b495a64f2a7aef5b071644909a}{inventario}} () const
+\begin{DoxyCompactList}\small\item\em Consultora del inventario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stock_aaa1564711f0e6aa0a8093f53a3dad0b4}{quitar\+\_\+prod}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Dar de baja un producto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}
+\begin{DoxyCompactList}\small\item\em Representa el inventario del almacen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa el control de inventario del almacen. 
+
+Definición en la línea 19 del archivo stock.\+hh.
+
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_stock_a06c7f65bcdd419950fa2c00fd638c03b}\label{class_stock_a06c7f65bcdd419950fa2c00fd638c03b}} 
+\index{Stock@{Stock}!poner\+\_\+prod@{poner\+\_\+prod}}
+\index{poner\+\_\+prod@{poner\+\_\+prod}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{poner\+\_\+prod()}{poner\_prod()}}
+{\footnotesize\ttfamily void Stock\+::poner\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+añadir producto al sistema 
+
+\begin{DoxyPrecond}{Precondición}
+identificador no existe 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es añadir un producto con 0 unidades e identificador \char`\"{}id\char`\"{} a la lista de productos del almacen 
+\end{DoxyPostcond}
+
+
+Definición en la línea 11 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+11                                \{
+12     \textcolor{comment}{//Busca el producto en el stock, si lo encuentra imprime error}
+13     \textcolor{comment}{//si no lo encunetra lo añade con 0 unidades }
+14     map<string,int>::iterator it;
+15     it = \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.find(\textcolor{keywordtype}{id});
+16     \textcolor{keywordflow}{if}(it != \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.end()) cout << \textcolor{stringliteral}{"  error"} << endl;
+17     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}[id] = 0;
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_a13f036a59415e6b865a3011ecd64d060}\label{class_stock_a13f036a59415e6b865a3011ecd64d060}} 
+\index{Stock@{Stock}!sumar\+\_\+stock@{sumar\+\_\+stock}}
+\index{sumar\+\_\+stock@{sumar\+\_\+stock}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{sumar\+\_\+stock()}{sumar\_stock()}}
+{\footnotesize\ttfamily void Stock\+::sumar\+\_\+stock (\begin{DoxyParamCaption}\item[{std\+::string}]{p,  }\item[{int}]{quant }\end{DoxyParamCaption})}
+
+
+
+Suma items al stock. 
+
+\begin{DoxyPrecond}{Precondición}
+identificador del producto empieza con una letra y quant $>$= 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se suma la cantidad de unidades indicada al total del stock del producto 
+\end{DoxyPostcond}
+
+
+Definición en la línea 20 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+20                                            \{
+21     \textcolor{comment}{//suma de unidades de p al stock}
+22     \textcolor{keywordflow}{if}(quant > 0)\mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}[p] += quant;
+23 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_a180a618016e6e6f78c6ca295c0ebfecc}\label{class_stock_a180a618016e6e6f78c6ca295c0ebfecc}} 
+\index{Stock@{Stock}!restar\+\_\+stock@{restar\+\_\+stock}}
+\index{restar\+\_\+stock@{restar\+\_\+stock}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{restar\+\_\+stock()}{restar\_stock()}}
+{\footnotesize\ttfamily void Stock\+::restar\+\_\+stock (\begin{DoxyParamCaption}\item[{std\+::string}]{p,  }\item[{int}]{quant }\end{DoxyParamCaption})}
+
+
+
+Restar items al stock. 
+
+\begin{DoxyPrecond}{Precondición}
+identificador del producto empieza con una letra y quant $>$= 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se quita la cantidad indicada de unidades de un producto del total del stock 
+\end{DoxyPostcond}
+
+
+Definición en la línea 25 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+25                                             \{
+26     \textcolor{comment}{//resta unidades de p al stock}
+27     \textcolor{keywordflow}{if}(quant > 0)\mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}[p] -= quant;
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}\label{class_stock_ae1fe35478f2eeae0f91216e7c25e33e6}} 
+\index{Stock@{Stock}!comprobar\+\_\+prod@{comprobar\+\_\+prod}}
+\index{comprobar\+\_\+prod@{comprobar\+\_\+prod}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{comprobar\+\_\+prod()}{comprobar\_prod()}}
+{\footnotesize\ttfamily int Stock\+::comprobar\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Consultora auxiliar. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un 0 si el producto no se encuentra registrado en el stock o un 1 si esta registrado 
+\end{DoxyPostcond}
+
+
+Definición en la línea 30 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+30                                          \{
+31     \textcolor{comment}{//comprueba si el producto esta en stock, si no lo está devuelve 0, si lo está devuelve 1}
+32     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.count(\textcolor{keywordtype}{id});
+33 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_aadb2f269b75da29388c0e8b7055b44ce}\label{class_stock_aadb2f269b75da29388c0e8b7055b44ce}} 
+\index{Stock@{Stock}!consultar\+\_\+prod@{consultar\+\_\+prod}}
+\index{consultar\+\_\+prod@{consultar\+\_\+prod}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{consultar\+\_\+prod()}{consultar\_prod()}}
+{\footnotesize\ttfamily void Stock\+::consultar\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de las unidades. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el numero de unidades del parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 35 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+35                                           \{
+36     \textcolor{comment}{//busca un producto en el stock, si no lo encuentra imprime error.}
+37     \textcolor{comment}{//Si lo encuentra imprime las unidades totales de ese producto.}
+38     map<string,int>::const\_iterator it;
+39     it = \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.find(\textcolor{keywordtype}{id});
+40     \textcolor{keywordflow}{if}(it != \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.end()) cout << \textcolor{stringliteral}{"  "} << it->second << endl;
+41     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"  error"} << endl;
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_ab92820b495a64f2a7aef5b071644909a}\label{class_stock_ab92820b495a64f2a7aef5b071644909a}} 
+\index{Stock@{Stock}!inventario@{inventario}}
+\index{inventario@{inventario}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{inventario()}{inventario()}}
+{\footnotesize\ttfamily void Stock\+::inventario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del inventario. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el numero de unidades de todos los productos del inventario 
+\end{DoxyPostcond}
+
+
+Definición en la línea 44 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+44                             \{
+45     \textcolor{comment}{//Recorre todo el stock e imprime todos los productos y sus unidades}
+46     \textcolor{keywordflow}{for} (map<string,int>::const\_iterator it=\mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.begin(); it!=\mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.end(); ++it) \{
+47         cout << \textcolor{stringliteral}{"  "} << it->first << \textcolor{stringliteral}{" "} << it ->second << endl;
+48     \}
+49 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_stock_aaa1564711f0e6aa0a8093f53a3dad0b4}\label{class_stock_aaa1564711f0e6aa0a8093f53a3dad0b4}} 
+\index{Stock@{Stock}!quitar\+\_\+prod@{quitar\+\_\+prod}}
+\index{quitar\+\_\+prod@{quitar\+\_\+prod}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{quitar\+\_\+prod()}{quitar\_prod()}}
+{\footnotesize\ttfamily void Stock\+::quitar\+\_\+prod (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Dar de baja un producto. 
+
+\begin{DoxyPrecond}{Precondición}
+identificador empieza por letra y unidades == 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es dar de baja el producto con identificador \char`\"{}id\char`\"{} de la lista de productos 
+\end{DoxyPostcond}
+
+
+Definición en la línea 51 del archivo stock.\+cc.
+
+
+\begin{DoxyCode}
+51                                  \{
+52     \textcolor{comment}{//Busca el producto en el stock, si lo encuentra y tiene 0 unidades lo borra del stock.}
+53     \textcolor{comment}{//En cualquier otro caso imprime error.}
+54     map<string,int>::iterator it;
+55     it = \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.find(\textcolor{keywordtype}{id});
+56     \textcolor{keywordflow}{if}(it != \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.end() and it->second == 0) \mbox{\hyperlink{class_stock_a55cb69748a14da5fe525e55a2c656ba9}{stock}}.erase (it);
+57     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"  error"} << endl;
+58 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_stock_a55cb69748a14da5fe525e55a2c656ba9}\label{class_stock_a55cb69748a14da5fe525e55a2c656ba9}} 
+\index{Stock@{Stock}!stock@{stock}}
+\index{stock@{stock}!Stock@{Stock}}
+\subsubsection{\texorpdfstring{stock}{stock}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string,int$>$ Stock\+::stock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Representa el inventario del almacen. 
+
+
+
+Definición en la línea 73 del archivo stock.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stock_8hh}{stock.\+hh}}\item 
+\mbox{\hyperlink{stock_8cc}{stock.\+cc}}\end{DoxyCompactItemize}
