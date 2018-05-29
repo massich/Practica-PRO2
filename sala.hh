@@ -99,7 +99,6 @@ public:
 
 private:
   Matrix estanteria;
-  int identificador_sala;
   std::map<std::string,int>stock_sala;
 };
 
